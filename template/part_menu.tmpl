@@ -1,0 +1,38 @@
+{{if eq .AuthLevel "auth"}}
+
+<!-- Right Nav Section -->
+<ul class="right">
+  <li><a href="{{.BaseURI}}profile">{{.UserFirstName}}</a></li>
+  <li class="has-dropdown">
+    <a href="#"><i class="fa fa-globe fa-2x" style="vertical-align: middle;"></i></a>
+    <ul class="dropdown">	
+		<li><a href="{{.BaseURI}}verify">Verify a User</a></li>
+		<li><a href="{{.BaseURI}}profile/email">Change Email</a></li>
+		<li><a href="{{.BaseURI}}profile/password">Change Password</a></li>
+		<li class="divider"></li>
+		<li><a href="{{.BaseURI}}about">About Verified.ninja</a></li>
+		<li><a href="{{.BaseURI}}contact">Contact our Team</a></li>
+		<li><a href="{{.BaseURI}}terms">Terms of Service</a></li>
+		<li><a href="{{.BaseURI}}logout">Logout</a></li>
+    </ul>
+  </li>
+</ul>
+
+{{else}}
+
+<ul class="right">
+  <li><a href="{{.BaseURI}}login">Login</a></li>
+  <li><a href="{{.BaseURI}}verify">Verify a User</a></li>
+  <li class="has-dropdown">
+    <a href="#"><i class="fa fa-globe fa-2x" style="vertical-align: middle;"></i></a>
+    <ul class="dropdown">
+		<li><a href="{{.BaseURI}}register">Register</a></li>
+		<li class="divider"></li>
+		<li><a href="{{.BaseURI}}about">About Verified.ninja</a></li>
+		<li><a href="{{.BaseURI}}contact">Contact our Team</a></li>
+		<li><a href="{{.BaseURI}}terms">Terms of Service</a></li>
+    </ul>
+  </li>
+</ul>
+
+{{end}}

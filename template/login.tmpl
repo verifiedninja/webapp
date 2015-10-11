@@ -1,0 +1,39 @@
+{{define "title"}}Login | Verified.ninja{{end}}
+{{define "head"}}{{JS "//www.google.com/recaptcha/api.js"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="small-12 column">
+		<h1>Login</h1>
+
+<form method="post">
+	<div>
+		<label for="email"></label>
+		<div><input type="email" id="email" name="email" maxlength="100" placeholder="Email" value="{{.email}}" /></div>
+	</div>
+	
+	<div>
+		<label for="password"></label>
+		<div><input type="password" id="password" name="password" maxlength="100" placeholder="Password" value="{{.password}}" /></div>
+	</div>
+
+	{{if SITEKEY}}
+		<div class="g-recaptcha" data-sitekey="{{SITEKEY}}" style="margin-bottom: 1rem;"></div>
+	{{end}}
+	
+	<div><input type="submit" value="Login" class="button" /></div>
+	
+	<input type="hidden" name="token" value="{{.token}}">
+</form>
+
+<p>
+{{LINK "register" "I don't have an account, but would like one!"}}
+</p>
+
+{{template "part_footer" .}}
+
+	</div> <!-- column -->
+</div> <!-- row -->
+
+{{end}}
+{{define "foot"}}{{end}}

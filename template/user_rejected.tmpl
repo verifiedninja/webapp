@@ -1,0 +1,34 @@
+{{define "title"}}Private Photo Rejected | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Private Photo Rejected</h1>
+		<p>Hello, {{.first_name}}. Your photo was rejected for the following reason(s):</p>
+		<ul>
+			<li>{{.note}}</li>
+		</ul>
+		
+		<div>
+		{{if eq .status_id 1}}
+			<div class="verification-box success">Verified on {{$.date}}</div>
+		{{else if eq .status_id 2}}
+			<div class="verification-box">Waiting for approval</div>
+		{{else if eq .status_id 3}}
+			<div class="verification-box alert">Rejected on {{$.date}}</div>
+		{{else}}
+			<div class="verification-box secondary">No Status</div>
+		{{end}}
+		</div>
+		<a href="{{.BaseURI}}{{.photo}}" target="_blank">
+			<img src="{{.BaseURI}}{{.photo}}" style="max-width: 300px; max-height: 300px; vertical-align: top;"/>
+		</a>
+		
+		<p><a href="{{.BaseURI}}profile/initial/delete/{{.photo_id}}">Delete Photo and submit new photo for verification.</a></p>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

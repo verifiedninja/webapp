@@ -1,0 +1,40 @@
+{{define "title"}}Contact our Team | Verified.ninja{{end}}
+{{define "head"}}{{JS "//www.google.com/recaptcha/api.js"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="small-12 column">
+		<h1>Contact our Team</h1>
+		
+		<p>Please use the form below to contact the team.</p>
+
+<form method="post">
+	<div{{if .logged_in}} style="display: none;"{{end}}>
+		<label for="fullname"></label>
+		<div><input type="text" id="fullname" name="fullname" maxlength="100" placeholder="First and Last Name" value="{{.fullname}}" /></div>
+	</div>
+	
+	<div{{if .logged_in}} style="display: none;"{{end}}>
+		<label for="email"></label>
+		<div><input type="email" id="email" name="email" maxlength="100" placeholder="Email" value="{{.email}}" /></div>
+	</div>
+
+      <label>
+        <textarea name="message" placeholder="Message" style="min-height: 100px;">{{.message}}</textarea>
+      </label>
+
+
+	<div class="g-recaptcha" data-sitekey="6LdCbAsTAAAAAEI-OgATY0he0yII7k2ppJ2xNlEm" style="margin-bottom: 1rem;"></div>
+	
+	<div><input type="submit" value="Submit" class="button" /></div>
+	
+	<input type="hidden" name="token" value="{{.token}}">
+</form>
+
+{{template "part_footer" .}}
+
+	</div> <!-- column -->
+</div> <!-- row -->
+
+{{end}}
+{{define "foot"}}{{end}}

@@ -1,0 +1,72 @@
+{{define "title"}}Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<div data-alert class="alert-box success"><strong>PRIVATE:</strong> You are the only person able to view this webpage.</div>
+		<h1>Hello, {{.first_name}}</h1>
+		<a class="button tiny" href="{{$.BaseURI}}profile/information">Manage your Information</a>
+		<a class="button tiny" href="{{$.BaseURI}}profile/email">Change your Email</a>
+		<a class="button tiny" href="{{$.BaseURI}}profile/password">Change your Password</a>
+		
+		{{if .isNinja}}
+		<p><img src="{{$.BaseURI}}static/resources/verifiedninja32.png" style="margin-right: 1rem;">You're a <strong>Verified.ninja!</strong></p>
+		{{else if .sites}}
+		<p>You are close to becoming a Verified.ninja, you just need a verified public photo.</p>
+		{{else}}
+		<p>You are close to becoming a Verified.ninja, you need to register a username in the section below.</p>
+		{{end}}
+		
+		<h2>Usernames</h2>
+		<a class="button tiny" href="{{$.BaseURI}}profile/site">Manage your Usernames</a>
+		{{if .sites}}
+			<ul>
+			{{range $i, $v := .sites}}
+				<li>
+					<a href="{{$v.Profile}}">{{$v.Username}}</a> on <a href="{{$v.Home}}">{{$v.Site}}</a>. Your public link: <a href="/public/{{$v.Site}}/{{$v.Username}}">{{$.BaseURI}}public/{{$v.Site}}/{{$v.Username}}</a>
+				</li>
+			{{end}}
+			</ul>
+		{{else}}
+			<p>You don't have any registered usernames. Please register your dating websites so other people can verify your status.</p>
+		{{end}}
+		
+		<h2>Photos</h2>
+		<a class="button tiny" href="{{$.BaseURI}}profile/initial">Add a Private Photo</a>
+		<a class="button tiny" href="{{$.BaseURI}}profile/photo/upload">Add a Public Photo</a>
+		<p>Private photos are viewable by only you. Public photos are viewable by the public and registered users ONLY if they are verified.</p>
+		<div id="photo-container">
+		{{range $i, $v := .images}}
+			<div id="photo{{$v.Name}}" style="display: inline-block; vertical-align: top; margin-right: 1rem; margin-bottom: 2rem;">
+				<div>
+				{{if eq $v.Status_id 1}}
+					<div class="verification-box success">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} Verified on {{$v.Date}}</div>
+				{{else if eq $v.Status_id 2}}
+					<div class="verification-box">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} Waiting for approval</div>
+				{{else if eq $v.Status_id 3}}
+					<div class="verification-box alert">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} Rejected - {{$v.Note}}</div>
+				{{else}}
+					<div class="verification-box secondary">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} No Status</div>
+				{{end}}
+				</div>
+				<a href="{{$.BaseURI}}{{$v.Path}}" target="_blank">
+					<img src="{{$.BaseURI}}{{$v.Path}}" style="max-width: 300px; max-height: 300px; vertical-align: top;"/>
+				</a>
+				<div style="margin-top: .5rem;">
+					{{if eq $v.Status_id 1}}
+					{{if eq $v.Initial 0}}
+						<a href="{{$.BaseURI}}profile/photo/download/{{$v.Name}}.jpg" class="button tiny success">Download Photo</a>
+					{{end}}
+					{{end}}
+					<a href="javascript:void(0);" onclick="deletePhoto('{{$v.Name}}');" class="button tiny alert">Delete Photo</a>
+				</div>
+			</div>
+		{{end}}
+		</div>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

@@ -1,0 +1,37 @@
+{{define "title"}}Update Email Address | Verified.ninja{{end}}
+{{define "head"}}{{JS "//www.google.com/recaptcha/api.js"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="small-12 column">
+		<h1>Update Email Address</h1>
+
+<form method="post">
+	
+	<p>
+		Current Email: {{.emailold}}
+	</p>
+	
+	<div class="error">
+		<label for="email">
+		<input type="email" id="email" name="email" maxlength="100" placeholder="New Email" value="{{.email}}" />
+		</label>
+		<small class="error">Email must be verified every 30 days so no temporary email addresses.</small>
+	</div>
+	
+	{{if SITEKEY}}
+		<div class="g-recaptcha" data-sitekey="{{SITEKEY}}" style="margin-bottom: 1rem;"></div>
+	{{end}}
+	
+	<div><input type="submit" value="Update Email" class="button" /></div>
+	
+	<input type="hidden" name="token" value="{{.token}}">
+</form>
+
+{{template "part_footer" .}}
+
+	</div> <!-- column -->
+</div> <!-- row -->
+
+{{end}}
+{{define "foot"}}{{end}}

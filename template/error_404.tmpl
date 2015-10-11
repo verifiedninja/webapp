@@ -1,0 +1,14 @@
+{{define "title"}}404 - Page Not Found | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>404 - Page Not Found</h1>
+		<p>I'm sure you were looking for something important, but we can't see to find it.
+		Try navigating back to the previous page and try again!</p>
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

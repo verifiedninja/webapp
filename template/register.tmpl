@@ -1,0 +1,50 @@
+{{define "title"}}Register | Verified.ninja{{end}}
+{{define "head"}}{{JS "//www.google.com/recaptcha/api.js"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="small-12 column">
+		<h1>Create an Account</h1>
+
+<form method="post">
+	<div>
+		<label for="first_name"></label>
+		<div><input type="text" id="first_name" name="first_name" maxlength="50" placeholder="First Name" value="{{.first_name}}" /></div>
+	</div>
+	
+	<div>
+		<label for="last_name"></label>
+		<div><input type="text" id="last_name" name="last_name" maxlength="50" placeholder="Last Name" value="{{.last_name}}" /></div>
+	</div>
+	
+	<div class="error">
+		<label for="email">
+		<input type="email" id="email" name="email" maxlength="100" placeholder="Email" value="{{.email}}" />
+		</label>
+		<small class="error">Email must be verified every 30 days so no temporary email addresses.</small>
+	</div>
+	<div>
+		<label for="password"></label><div>
+		<input type="password" id="password" name="password" maxlength="100" placeholder="Password" value="{{.password}}" />	</div>
+	</div>
+	<div>
+		<label for="password_verify"></label>
+		<div><input type="password" id="password_verify" name="password_verify" maxlength="100" placeholder="Verify Password" value="{{.password}}" /></div>
+	</div>
+	
+	{{if SITEKEY}}
+		<div class="g-recaptcha" data-sitekey="{{SITEKEY}}" style="margin-bottom: 1rem;"></div>
+	{{end}}
+	
+	<div><input type="submit" value="Create Account" class="button" /></div>
+	
+	<input type="hidden" name="token" value="{{.token}}">
+</form>
+
+{{template "part_footer" .}}
+
+	</div> <!-- column -->
+</div> <!-- row -->
+
+{{end}}
+{{define "foot"}}{{end}}

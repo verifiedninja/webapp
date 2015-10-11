@@ -1,0 +1,14 @@
+{{define "title"}}About | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>{{template "title" .}}</h1>
+		{{template "part_about" .}}
+		<p>Page last updated: 9/2/2015</p>
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

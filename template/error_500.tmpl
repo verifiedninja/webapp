@@ -1,0 +1,15 @@
+{{define "title"}}500 - Internal Server Error | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>500 - Internal Server Error</h1>
+		<p>I'm sure you were looking for something important, but it doesn't seem to
+		be working right now.
+		Navigate back to the previous page and try again!</p>
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

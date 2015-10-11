@@ -1,0 +1,58 @@
+{{define "title"}}Photo Verification for Online Dating | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="slider-image" src="{{.BaseURI}}static/resources/slider{{RANDIMGSLIDER}}.jpg">
+	<div class="front-banner alpha60">
+		<h1>Photo Verification for Online Dating</h1>
+		<div class="front-banner-sub">
+			Goodbye outdated photos, inactive profiles, and robots
+		</div>
+	</div>
+<div class="row front-button-container">
+	<div class="large-4 columns">
+		<div class="front-button-cell">
+			<div class="front-button-words">Did you find a Verified.ninja in the wild? Verify the account status.</div>
+			<a href="{{.BaseURI}}verify" class="button">Verify a User</a>
+		</div>
+	</div>
+		<div class="large-4 columns">
+		<div class="front-button-cell">
+			<div class="front-button-words">Login to manage your public profiles for your dating websites.</div>
+			<a href="{{.BaseURI}}login" class="button">Login</a>
+		</div>
+	</div>
+	<div class="large-4 columns">
+		<div class="front-button-cell">
+			<div class="front-button-words">Don't have an account yet. How are you going to be a Verified.ninja?!</div>
+			<a href="{{.BaseURI}}register" class="button">Register</a>
+		</div>
+	</div>
+</div>
+
+<div class="row front-button-container">
+	<div class="large-8 columns">
+		<div class="front-button-cell">
+			<div class="front-button-words">Once you have an account, you can download our Chrome Browser Extension that automatically 
+			scans the dating website you are visiting and adds a green ninja icon <img src="/static/resources/greenninja16.png"> next 
+			to people that are Verified.ninjas or a red ninja icon <img src="/static/resources/redninja16.png"> next to people that are not.</div>
+		</div>
+	</div>
+	<div class="large-4 columns">
+		<div class="front-button-cell" style="background-color: white;">
+			<a href="https://chrome.google.com/webstore/detail/verifiedninja/nonclnlmehgbjgikmnkafgamfjkdogdb">
+				<img src="{{.BaseURI}}static/resources/ChromeWebStore_Badge_v2_206x58.png"  style="padding-top: .75rem;">
+			</a>
+		</div>
+	</div>
+</div>
+		
+		
+		
+<div class="row">
+	<div class="large-12 columns">
+		{{template "part_about" .}}
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

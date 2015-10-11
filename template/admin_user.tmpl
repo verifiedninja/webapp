@@ -1,0 +1,51 @@
+{{define "title"}}All Users{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>{{template "title" .}}</h1>
+		
+		<p>
+		{{range $ii, $val := .users}}
+			<div>
+			<div><h2>{{$val.Id}}: {{$val.FirstName}} {{$val.LastName}} ({{$val.Token}})</h2></div>
+			{{if $val.Images}}
+				{{range $i, $v := $val.Images}}
+					<div style="display: inline-block; vertical-align: top; margin-right: 1rem; margin-bottom: 2rem;">
+					<div>
+					{{if eq $v.Status_id 1}}
+						<div class="verification-box success">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} Verified on {{$v.Date}}</div>
+					{{else if eq $v.Status_id 2}}
+						<div class="verification-box">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} Waiting for approval</div>
+					{{else if eq $v.Status_id 3}}
+						<div class="verification-box alert">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} Rejected</div>
+					{{else}}
+						<div class="verification-box secondary">{{if $v.Initial}}PRIVATE:{{else}}PUBLIC:{{end}} No Status</div>
+					{{end}}
+					</div>
+						<a href="{{$.BaseURI}}{{$v.Path}}" target="_blank">
+							<img src="{{$.BaseURI}}{{$v.Path}}" style="max-width: 300px; max-height: 300px; vertical-align: top;"/>
+						</a>
+						<div style="margin-top: .5rem;">
+							<textarea id="note_{{$val.Id}}{{$v.Name}}" placeholder="Rejection note"></textarea>
+						</div>
+						<div>
+							<a class="button success tiny" href="javascript:void(0);" onclick="approvePhoto('{{$val.Id}}', '{{$v.Name}}');">Approve</a>
+							<a class="button alert tiny" href="javascript:void(0);" onclick="rejectPhoto('{{$val.Id}}', '{{$v.Name}}');">Reject</a>
+							<a class="button tiny" href="javascript:void(0);" onclick="unverifyPhoto('{{$val.Id}}', '{{$v.Name}}');">Unverify</a>
+						</div>
+					</div>
+				{{end}}
+			{{else}}
+				No photos yet
+			{{end}}
+			</div>
+		{{end}}
+		</p>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

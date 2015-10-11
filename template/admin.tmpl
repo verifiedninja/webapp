@@ -1,0 +1,60 @@
+{{define "title"}}User Dashboard | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>User Dashboard</h1>
+<a class="button tiny" href="{{$.BaseURI}}profile">Profile</a>
+<a class="button tiny" href="{{$.BaseURI}}admin/all">All Users</a>
+<table class="user-table">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Token</th>
+			<th>Email Verified</th>
+			<th>Unverified Images</th>
+			<th>Verified Images</th>
+			<th>Sites</th>
+			<th>Status</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	{{if .users}}
+		{{range $ii, $val := .users}}
+			<tbody>		
+			    <tr>
+					<td>{{$val.Id}}</td>
+					<td>{{$val.FirstName}}</td>
+					<td>{{$val.LastName}}</td>
+					<td>{{$val.Token}}</td>
+					<td>{{if $val.Email}}<i class="fa fa-check"></i>{{else}}<i class="fa fa-times"></i>{{end}}</td>
+					{{if gt $val.UnverifiedCount 0}}
+						<td class="unverified">{{$val.UnverifiedCount}}</td>
+					{{else}}
+						<td>{{$val.UnverifiedCount}}</td>
+					{{end}}
+					<td>{{$val.VerifiedCount}}</td>
+					<td>{{$val.SiteCount}}</td>
+					{{if $val.Ninja}}
+					<td><img src="{{$.BaseURI}}static/resources/verifiedninja32.png"></td>
+					{{else}}
+					<td><i class="fa fa-times"></i></td>
+					{{end}}
+					<td><a href="{{$.BaseURI}}admin/user/{{$val.Id}}">Manage</a></td>
+			    </tr>
+			</tbody>
+		{{end}}
+	{{else}}
+		No users
+	{{end}}
+  
+</table>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

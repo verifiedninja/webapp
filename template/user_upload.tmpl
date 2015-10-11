@@ -1,0 +1,40 @@
+{{define "title"}}Public Photo Upload | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Public Photo Upload</h1>
+		<p>Upload a photo you would like to be approved. Once we approve a photo, we will
+		add the Verified.ninja logo to the top right corner so you can download it and
+		use it on your dating websites.</p>
+		
+		<p>We take pride in our ability to verify photos using various techniques to ensure they are genuine. We will
+		reject photos with an explanation if they don't meet the requirements below.</p>
+		
+		<p><strong>This photo will be viewable by the public and registered users of this site.</strong></p>
+		
+		<div>Requirements for the <strong>public</strong> photos:</div>
+		<ul>
+		<li>Taken in a well-lit area</li>
+		<li>Clearly shows your face</li>
+		<li>No mirror or bathroom photos</li>
+		<li>No other people in the photo</li>
+		<li>No post processing - please don't apply any filters, affix any borders, or change the colors</li>
+		<li>Photo type is JPG/JPEG, PNG, or PNG</li>
+		<li>Must be atleast 300x300 pixels</li>
+		<li>Must be less than 5MB (megabytes)</li>
+		<li>No nudity or explicit content</li>
+		</ul>
+		
+		<form method="post" enctype="multipart/form-data">
+		<input type="file" name="photo" id="fileinput" />
+		<input class="button" type="submit" value="Submit">
+		<input type="hidden" name="token" value="{{.token}}">
+		</form>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

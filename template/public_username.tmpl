@@ -1,0 +1,75 @@
+{{define "title"}}{{.username}} | Verified.ninja{{end}}
+{{define "head"}}<meta name="robots" content="noindex">{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		{{if eq .AuthLevel "auth"}}
+		{{if .isSelf}}
+		<div data-alert class="alert-box"><strong>PUBLIC:</strong> The public and registered users of this site are able to view this webpage.
+		To enhance your privacy, the following information is not available to the public or to any other registered user of this site:
+		first name, last name, email, other dating websites usernames, unverified photos and rejected photos.</div>
+		{{end}}
+		{{end}}
+		<h1>Who is a Verified.ninja?</h1>
+		
+		{{if eq .verified_email false}}
+			<p><strong>{{.username}}</strong> is not a Verified.ninja. The person has an account with us, but does not have an email address that was verified in the last 30 days.</p>
+			<h2>What does this mean?</h2>
+			<p>It means the person created an account, but has not kept the account current.</p>
+		{{else}}
+		{{if .verified_public}}
+			<p><strong>{{.username}}</strong> is a Verified.Ninja on <a href="{{.profile}}" target="_blank">{{.site}}</a>!</p>
+
+			<h2>Verified Photos</h2>
+			<div>
+			{{if .images}}
+				{{range $i, $v := .images}}
+					<div id="photo{{$v.Name}}" style="display: inline-block; vertical-align: top; margin-right: 1rem; margin-bottom: 2rem;">
+						<div>
+						{{if eq $v.Status_id 1}}
+							<div class="verification-box success">Verified on {{$v.Date}}</div>
+						{{else if eq $v.Status_id 2}}
+							<div class="verification-box">Waiting for approval</div>
+						{{else if eq $v.Status_id 3}}
+							<div class="verification-box alert">Rejected</div>
+						{{else}}
+							<div class="verification-box secondary">No Status</div>
+						{{end}}
+						</div>
+						<a href="{{$.BaseURI}}{{$v.Path}}" target="_blank">
+							<img src="{{$.BaseURI}}{{$v.Path}}" style="max-width: 300px; max-height: 300px; vertical-align: top;"/>
+						</a>
+					</div>
+				{{end}}
+			{{else}}
+			No public photos yet
+			{{end}}
+			</div>
+			
+			<h2>What does this mean?</h2>
+			<p>It means the person has a verified email address, has uploaded a private photo that we verified, and has associated his or her
+			dating username with us. All the photos above have been verified by us. Any photos that appear on the dating website, but do
+			not appear above are NOT verified.</p>
+		{{else if .verified_private}}
+			<p><strong>{{.username}}</strong> is not a Verified.ninja. The person has an account with us and has a private verified photo, but does not have any verified public photos.</p>
+			<h2>What does this mean?</h2>
+			<p>It means the person has a verified email address, and has uploaded a private photo for verification, but the person still needs to verify a public photo.</p>
+		{{else if .exists}}
+			<p><strong>{{.username}}</strong> is not a Verified.ninja. The person has an account with us, but does not have any verified private or public photos.</p>
+			<h2>What does this mean?</h2>
+			<p>It means the person has a verified email address, but has not uploaded any photos for verification.</p>
+		{{else}}
+			<p><strong>{{.username}}</strong> is not a Verified.ninja. The person does not have an account with us.</p>
+			<h2>What does this mean?</h2>
+			<p>It means the person has never created an account on our website.</p>
+		{{end}}
+		{{end}}
+		
+		{{template "part_about" .}}
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

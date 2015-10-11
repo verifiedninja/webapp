@@ -1,0 +1,39 @@
+{{define "title"}}Verify a User | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Verify a User</h1>
+		<p>If you find a Verified.ninja in the wild, it's a good idea to verify the person's photos are recent as
+		well as verify if they are actually a Verified.ninja.
+		Select a dating website from the dropdown list below and then type in the username to see if the
+		person is a Verified.ninja. If they are not, you'll see a description of why they are not verified.
+		</p>
+		
+		<form>
+		<div class="row">
+		    <div class="large-12 columns">
+		      <label>Select a Dating Website
+		        <select id="site" name="site">
+		          <option value="OkCupid">OkCupid</option>
+		          <option value="ChristianMingle">ChristianMingle</option>
+		        </select>
+		      </label>
+		    </div>
+		  </div>		
+		  <div class="row">
+		    <div class="large-12 columns">
+		      <label>Type in the username to verify
+		        <input id="username" name="username" type="text" placeholder="Username" />
+		      </label>
+		    </div>
+		  </div>
+		  <a href="javascript:void(0);" onclick="verifyUsername();" class="button">Verify</a>
+		</form>		
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

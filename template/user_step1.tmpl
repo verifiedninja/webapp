@@ -1,0 +1,48 @@
+{{define "title"}}Private Photo Upload | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Private Photo Upload</h1>
+		<div>Hello, {{.first_name}}! You need to upload a photo of yourself holding up a piece of paper that has
+		these uniquely generated characters:</div>
+		
+		<h3 style="margin-top: .5rem; font-weight: bold;">{{.user_token}}</h3>
+		
+		<p>We take pride in our ability to verify photos using various techniques to ensure they are genuine. We will
+		reject photos with an explanation if they don't meet the requirements below.</p>
+		
+		<p>The <strong>private</strong> photo requirements are much more strict than the <strong>public</strong> photo
+		requirements. <strong>This photo will NOT be viewable 
+		by the public or registered users of this site.</strong> It is only used for initial verification so we 
+		have a baseline for public photos later.</p>
+		
+		<div>Requirements for the <strong>private</strong> photos:</div>
+		<ul>
+		<li>Hold a piece of white paper with the generate characters in a dark color so they can be read easily</li>
+		<li>No selfies - the photo must be taken by another person</li>
+		<li>Clearly shows your face, torso, arms, legs, and feet</li>
+		<li>Smile - it's not a mug shot so don't look like it</li>
+		<li>Taken in a well-lit area</li>
+		<li>No mirror or bathroom photos</li>
+		<li>No baggy clothing</li>
+		<li>No other people in the photo</li>
+		<li>No post processing - please don't apply any filters, affix any borders, or change the colors</li>
+		<li>Photo type is JPG/JPEG, PNG, or PNG</li>
+		<li>Must be atleast 300x300 pixels</li>
+		<li>Must be less than 5MB (megabytes)</li>
+		<li>No nudity or explicit content</li>
+		</ul>
+		
+		<form method="post" enctype="multipart/form-data">
+		<input type="file" name="photo" id="fileinput" />
+		<input class="button" type="submit" value="Submit">
+		<input type="hidden" name="token" value="{{.token}}">
+		</form>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}

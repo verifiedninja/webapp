@@ -1,0 +1,68 @@
+{
+	"Database": {
+		"Type": "MySQL",
+		"MySQL": {
+			"Username": "root",
+			"Password": "",
+			"Name": "ninja",
+			"Hostname": "127.0.0.1",
+			"Port": 3306,
+			"Parameter": "?parseTime=true"
+		},
+		"SQLite": {
+			"Parameter": "gowebapp.db"
+		}
+	},
+	"Email": {
+		"Username": "REDACTED",
+		"Password": "REDACTED",
+		"Hostname": "email-smtp.us-east-1.amazonaws.com",
+		"Port": 587,
+		"From": "system@verified.ninja"
+	},
+	"Pushover": {
+		"Enabled": false,
+		"Token": "REDACTED",
+		"UserKey": "REDACTED"
+	},
+	"Recaptcha": {
+		"Enabled": false,
+		"Secret": "REDACTED",
+		"SiteKey": "REDACTED"
+	},
+	"Server": {
+		"Hostname": "",
+		"UseHTTP": true,
+		"UseHTTPS": false,
+		"HTTPPort": 80,
+		"HTTPSPort": 443,
+		"CertFile": "tls/server.crt",
+		"KeyFile": "tls/server.key"
+	},
+	"Session": {
+		"SecretKey": "$E=e+U?Rug*8AGAneZaD@6ce3UqUFU*u",
+		"Name": "gosess",
+		"Options": {
+			"Path": "/",
+			"Domain": "",
+			"MaxAge": 28800,
+			"Secure": false,
+			"HttpOnly": true
+		}
+	},
+	"Template": {
+		"Root": "index",
+		"Children": [
+			"part_menu",
+			"part_footer",
+			"part_about"
+		]
+	},
+	"View": {
+		"BaseURI": "http://localhost/",
+		"Extension": "tmpl",
+		"Folder": "template",
+		"Name": "blank",
+		"Caching": true
+	}
+}

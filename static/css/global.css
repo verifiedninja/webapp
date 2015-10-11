@@ -1,0 +1,268 @@
+/* Global Styles */
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+  line-height: 1.1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin-top: 1.25rem;
+}
+
+a, .top-bar-section ul li > a {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  word-wrap: break-word;
+  outline: none;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.user-table {
+	width: 100%;
+}
+
+.user-table td,
+.user-table th {
+	text-align: center;
+}
+
+.user-table .unverified {
+	background-color: #008CBA;
+    border-color: #007095;
+    color: #FFFFFF;
+}
+
+/* Notification Styles */
+#flash-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+}
+
+.alert-box-fixed {
+  margin: 0 .5rem .5rem 0;
+}
+
+/* Verification box */
+.verification-box {
+    color: #008CBA;
+	margin-bottom: .5rem;
+}
+
+.verification-box.success {
+    color: #43AC6A;
+}
+
+.verification-box.alert {
+    color: #f04124;
+}
+
+.verification-box.secondary {
+    color: #e7e7e7;
+}
+
+/* Front Page */
+
+.top-image {
+	max-height: 259px;
+	width: 100%;
+}
+
+.slider-image {
+	max-height: 697px;
+	width: 100%;
+}
+
+.front-button-container {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.front-button-cell {
+	padding: 2rem;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.front-button-cell .button {
+	margin: 2rem 0 0 0;
+}
+
+.front-button-words {
+	color: #ffffff;
+	line-height: 1.5rem;
+}
+
+.front-banner {
+	font-size: 5rem;
+	line-height: 5rem;
+    margin: 14rem 0 0 4rem;
+    max-width: 35%;
+	color: #ffffff;
+	
+	text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+	padding: 20px;
+}
+
+.front-banner h1 {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+	font-style: normal;
+    font-weight: normal;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+
+.alpha60 {
+	background-color: rgba(0, 140, 186, 0.8);
+    /*background: rgb(133, 195, 211) transparent;
+    background: rgba(133, 195, 211, 0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";*/
+}
+
+.front-banner-sub {
+   margin-top: 1rem;
+   font-size: 2.5rem;
+   line-height: 3rem;
+}
+
+/* Small screens */
+@media only screen {
+	.front-banner {
+		font-size: 1.5rem;
+	    line-height: 1.5rem;
+	    margin: 1rem 0 .5rem 0;
+		max-width: none;
+		width: 100%;
+		
+		position: static;
+	}
+	
+	.front-banner h1 {
+		font-size: 1.5rem;
+	    line-height: 1.5rem;
+	}
+	
+	.front-button-container {
+	    margin-top: 0rem;	
+	}
+	
+	.front-button-cell {
+		padding: 1rem;
+		margin: .5rem 0;
+	}
+	
+	.front-button-cell .button {
+		margin: .5rem 0 0 0;
+	}
+	
+	.front-banner-sub {
+		margin-top: 1rem;
+		font-size: 1rem;
+		line-height: 1rem;
+	}
+}
+
+/* Medium screens */
+@media only screen and (min-width: 40.063em) {
+	.front-banner {
+		font-size: 1.75rem;
+		line-height: 1.75rem;
+	    margin: 1rem 0 .5rem 0rem;
+		max-width: none;
+		width: 100%;
+		
+	    position: static;
+	}
+	
+	.front-banner h1 {
+		font-size: 1.75rem;
+		line-height: 1.75rem;
+	}
+	
+	.front-button-container {
+	    margin-top: 0rem;
+	}
+	
+	.front-button-cell {
+		padding: 1rem;
+		margin: .5rem 0;
+	}
+	
+	.front-button-cell .button {
+		margin: .5rem 0 0 0;
+	}
+	
+	.front-banner-sub {
+		margin-top: 1rem;
+		font-size: 1.25rem;
+		line-height: 1.25rem;
+	}
+}
+
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) {
+	.front-banner {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	    margin: 10rem 0 0 4rem;
+	    max-width: 35%;
+		
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+	
+	.front-banner h1 {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+	
+	.front-button-container {
+	    margin-top: 1rem;
+	}
+	
+	.front-banner-sub {
+	   margin-top: 1rem;
+	   font-size: 1.5rem;
+	   line-height: 2rem;
+	}	
+} 
+
+/* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 95.063em) {
+	.front-banner {
+		font-size: 3.5rem;
+		line-height: 3.5rem;
+	    margin: 12rem 0 0 4rem;
+	    max-width: 35%;
+		
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+	
+	.front-banner h1 {
+		font-size: 3.5rem;
+		line-height: 3.5rem;
+	}
+	
+	.front-banner-sub {
+	   margin-top: 1rem;
+	   font-size: 2.5rem;
+	   line-height: 3rem;
+	}	
+} 
+
+/* min-width 1921px, xxlarge screens */
+@media only screen and (min-width: 120.063em) {
+
+} 

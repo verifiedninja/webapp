@@ -1,0 +1,30 @@
+{{define "title"}}Manage your Usernames | Verified.ninja{{end}}
+{{define "head"}}{{end}}
+{{define "content"}}
+<img class="top-image" src="{{.BaseURI}}static/resources/top{{RANDIMG}}.jpg">
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Manage your Usernames</h1>
+		<p>To help protect your identity on dating websites, please enter 
+		in your usernames below so no one else can pose as you.</p>
+		
+<form method="post">
+
+{{range $i, $v := .sites}}
+  <div class="row">
+    <div class="large-12 columns">
+      <label>{{$v.Name}}
+        <input name="{{$v.Id}}" type="text" placeholder="{{$v.Name}} username..." value="{{index $.data $v.Id}}"/>
+      </label>
+    </div>
+  </div>
+{{end}}
+
+	<input type="submit" class="button tiny" value="Save" />
+</form>
+		
+		{{template "part_footer" .}}
+	</div>
+</div>
+{{end}}
+{{define "foot"}}{{end}}
