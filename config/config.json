@@ -14,21 +14,21 @@
 		}
 	},
 	"Email": {
-		"Username": "REDACTED",
-		"Password": "REDACTED",
+		"Username": "",
+		"Password": "",
 		"Hostname": "email-smtp.us-east-1.amazonaws.com",
 		"Port": 587,
 		"From": "system@verified.ninja"
 	},
 	"Pushover": {
 		"Enabled": false,
-		"Token": "REDACTED",
-		"UserKey": "REDACTED"
+		"Token": "",
+		"UserKey": ""
 	},
 	"Recaptcha": {
 		"Enabled": false,
-		"Secret": "REDACTED",
-		"SiteKey": "REDACTED"
+		"Secret": "",
+		"SiteKey": ""
 	},
 	"Server": {
 		"Hostname": "",

@@ -55,6 +55,14 @@ set the user.status_id field to 1 through MySQL. You will then able to login.
 You can also change the role.level_id field to 1 to set the user as an Administrator 
 with verification capabilities.
 
+## Server Configuration
+
+Add this line to cron to require email verification after 30 days:
+
+~~~
+0 8 * * * wget -O /dev/null -q https://verified.ninja/cron/notifyemailexpire
+~~~
+
 ## Verification Process
 
 These are the requirements for the private photos that are showed to the member. 
@@ -75,9 +83,8 @@ These are the requirements for the private photos:
 * Must be less than 5MB (megabytes)
 * No nudity or explicit content
 
-The administrator can reject the photo with an explanation.
-
-Once a public photo is verifyed, the member can upload public photos for verification.
+The administrator can reject the photo with an explanation. Once a public photo 
+is verified, the member can upload public photos for verification.
 
 These are the requirements for the public photos:
 * Taken in a well-lit area
@@ -114,8 +121,8 @@ of a Verified.ninja:
 The member chooses the dating website from the dropdown list and then types in the 
 username of the member. Once the member hits the Verify button, a new page displays 
 with the member's status and an explanation about our service.
-2. The second method is much easier and quicker. We've developed a Chrome browser 
-extension that will scan the dating website and insert a green ninja logo next to 
+2. The second method is much easier and quicker. We've developed a [Chrome browser 
+extension](https://github.com/verifiedninja/chromeext) that will scan the dating website and insert a green ninja logo next to 
 each verified username or a red ninja logo for those that have not verified with 
 our service.
 
@@ -124,14 +131,6 @@ of the benefits of the service is members with the status of Verified.ninja usua
 get more responses on dating websites because his or her photos are verified.
 
 We currently support the following dating websites: OKCupid and ChristianMingle.
-
-## Server Configuration
-
-Add this line to cron to require email verification after 30 days:
-
-~~~
-0 8 * * * wget -O /dev/null -q https://verified.ninja/cron/notifyemailexpire
-~~~
 
 ## Screenshots
 
