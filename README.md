@@ -3,6 +3,8 @@
 This project is on an indefinite hiatus. The website, https://verified.ninja, is no longer available online
 so all the code is now open source.
 
+The Chrome browser extension can be found [here](https://github.com/verifiedninja/chromeext).
+
 ## Overview
 
 One of the predominate issues in online dating today is people don't look like their photos.
