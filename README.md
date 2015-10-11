@@ -120,51 +120,51 @@ We currently support the following dating websites: OKCupid and ChristianMingle.
 
 Public Home:
 
-![Image of Public Home](https://github.com/verifiedninja/webapp/github_screenshots/home.PNG)
+![Image of Public Home](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/home.PNG)
 
 Register:
 
-![Image of Register](https://github.com/verifiedninja/webapp/github_screenshots/register.PNG)
+![Image of Register](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/register.PNG)
 
 Login:
 
-![Image of Register](https://github.com/verifiedninja/webapp/github_screenshots/login.PNG)
+![Image of Register](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/login.PNG)
 
 Demographic:
 
-![Image of Demographic](https://github.com/verifiedninja/webapp/github_screenshots/demographic.PNG)
+![Image of Demographic](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/demographic.PNG)
 
 Private Photo Upload:
 
-![Image of Private Upload](https://github.com/verifiedninja/webapp/github_screenshots/private.PNG)
+![Image of Private Upload](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/private.PNG)
 
 Waiting for Private Photo Verification:
 
-![Image of Private Photo Verification](https://github.com/verifiedninja/webapp/github_screenshots/waiting.PNG)
+![Image of Private Photo Verification](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/waiting.PNG)
 
 Verified Private Photo:
 
-![Image of Private Photo](https://github.com/verifiedninja/webapp/github_screenshots/verifiedprivate.PNG)
+![Image of Private Photo](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/verifiedprivate.PNG)
 
 Dating Usernames:
 
-![Image of Dating Usernames](https://github.com/verifiedninja/webapp/github_screenshots/usernames.PNG)
+![Image of Dating Usernames](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/usernames.PNG)
 
 Public Photo Upload:
 
-![Image of Public Upload](https://github.com/verifiedninja/webapp/github_screenshots/public.PNG)
+![Image of Public Upload](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/public.PNG)
 
 Verified Public Photo:
 
-![Image of Public Upload](https://github.com/verifiedninja/webapp/github_screenshots/privateprofile.PNG)
+![Image of Public Upload](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/privateprofile.PNG)
 
 Waiting for Public Photo Verification:
 
-![Image of Public Photo Verification](https://github.com/verifiedninja/webapp/github_screenshots/privateprofile.PNG)
+![Image of Public Photo Verification](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/privateprofile.PNG)
 
 Public Profile
 
-![Image of Public Profile](https://github.com/verifiedninja/webapp/github_screenshots/verifiedpublic.PNG)
+![Image of Public Profile](https://raw.githubusercontent.com/verifiedninja/webapp/master/github_screenshots/verifiedpublic.PNG)
 
 ## Feedback
 
