@@ -11,6 +11,7 @@ to make themselves look different from how they look today.
 
 We designed a service where members of a dating website can create an account and then upload photos of themselves
 that meet strict requirements. The member must follow these steps:
+
 1. Create an account with first name, last name, email, and password. The email must be verified every 30 days so it
 must be real.
 2. Verify email address by clicking on the URL in the email.
@@ -23,6 +24,14 @@ must be real.
 The web application is coded in Golang. There is also publicly available code for a Chrome extension.
 
 The web application was created from this template: https://github.com/josephspurrier/gowebapp
+
+## Hiatus
+
+The service is pretty much complete, but there are still a few things that need 
+to be added like a 90 day automatic private photo unverification which is pretty
+easy. The route from the cron job should be protected so it's not public. The
+brute force protection needs to be moved outside the application. There are a few
+more things, but for the most part, it was a fully working service.
 
 ## Quick Start Testing
 
@@ -100,11 +109,11 @@ their public profile with text that says they are a Verified.ninja:
 
 There are two ways for other members to confirm whether a person has the status 
 of a Verified.ninja:
+
 1. The first method is through the publicly available "Verify a User" page. 
 The member chooses the dating website from the dropdown list and then types in the 
 username of the member. Once the member hits the Verify button, a new page displays 
 with the member's status and an explanation about our service.
-
 2. The second method is much easier and quicker. We've developed a Chrome browser 
 extension that will scan the dating website and insert a green ninja logo next to 
 each verified username or a red ninja logo for those that have not verified with 
@@ -115,6 +124,14 @@ of the benefits of the service is members with the status of Verified.ninja usua
 get more responses on dating websites because his or her photos are verified.
 
 We currently support the following dating websites: OKCupid and ChristianMingle.
+
+## Server Configuration
+
+Add this line to cron to require email verification after 30 days:
+
+~~~
+0 8 * * * wget -O /dev/null -q https://verified.ninja/cron/notifyemailexpire
+~~~
 
 ## Screenshots
 
@@ -168,5 +185,5 @@ Public Profile
 
 ## Feedback
 
-All feedback is welcome. Let me know if you have any suggestions, questions, or criticisms. 
-If something is not idiomatic to Golang, please let me know know so we can make it better.
+All feedback is welcome. This code is no longer maintained, but can be used as a real-world example of how to build a web application
+using Golang.
