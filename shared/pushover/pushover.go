@@ -2,7 +2,8 @@ package pushover
 
 import (
 	"errors"
-	"github.com/thorduri/pushover"
+
+	"github.com/toorop/pushover"
 )
 
 var (
